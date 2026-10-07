@@ -27,10 +27,10 @@ Welcome to the official Mamacycle documentation. Here you'll find everything you
 | Feature | Description |
 |---------|-------------|
 | Cycle Tracking | Log daily symptoms, moods, and periods. |
-| Insights | AI-driven predictions and health tips. |
-| Reminders | Set custom notifications for meds or appointments. |
+| Insights |  predictions and health tips are based on realistic measures |
+| Reminders | Set custom notifications for meds or getting your next reading. |
 | Community | Join groups, ask questions, and share experiences. |
-| Reports | Export monthly summaries as PDF or CSV. |
+
 
 ## Account Management
 
