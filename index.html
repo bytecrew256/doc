@@ -15,6 +15,187 @@ body{
   font-size:16px;
 }
 
+/* ---------- Top bar ---------- */
+
+.topbar{
+  background:#fff;
+  border-bottom:1px solid #f5d3e2;
+  padding:16px 22px;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.topbar-inner{
+  max-width:1150px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+}
+
+.brand-mark{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:#c2568a;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Georgia, serif;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.brand-name{
+  font-family:Georgia, serif;
+  font-size:19px;
+  color:#a8436f;
+  letter-spacing:0.3px;
+}
+
+.topbar nav{
+  display:flex;
+  gap:22px;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+}
+
+.topbar nav a{
+  color:#6b5560;
+  text-decoration:none;
+}
+
+.topbar nav a:hover{
+  color:#c2568a;
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+  background:#fff;
+  border-bottom:1px solid #f5d3e2;
+  padding:60px 22px 70px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-80px;
+  right:-80px;
+  width:260px;
+  height:260px;
+  background:#fce4ee;
+  border-radius:50%;
+  opacity:0.55;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:-100px;
+  left:-60px;
+  width:220px;
+  height:220px;
+  background:#fbd7e6;
+  border-radius:50%;
+  opacity:0.5;
+}
+
+.hero-inner{
+  max-width:760px;
+  margin:0 auto;
+  position:relative;
+  z-index:1;
+}
+
+.hero-tag{
+  display:inline-block;
+  background:#fce4ee;
+  color:#c2568a;
+  font-family:Arial, sans-serif;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  padding:7px 16px;
+  border-radius:20px;
+  margin-bottom:22px;
+}
+
+.hero h1{
+  font-family:Georgia, serif;
+  font-size:44px;
+  color:#a8436f;
+  font-weight:normal;
+  line-height:1.2;
+  margin-bottom:18px;
+}
+
+.hero h1 em{
+  font-style:italic;
+  color:#c2568a;
+}
+
+.hero p{
+  font-size:17px;
+  color:#6b5560;
+  margin-bottom:28px;
+  line-height:1.7;
+}
+
+.hero-actions{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+  font-weight:bold;
+  padding:13px 26px;
+  border-radius:8px;
+  text-decoration:none;
+  transition:all .15s;
+  cursor:pointer;
+  border:none;
+}
+
+.btn-primary{
+  background:#c2568a;
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:#a8436f;
+}
+
+.btn-outline{
+  background:transparent;
+  color:#c2568a;
+  border:1px solid #e8a8c4;
+}
+
+.btn-outline:hover{
+  background:#fce4ee;
+}
+
+/* ---------- Layout ---------- */
+
 .wrapper{
   display:flex;
   max-width:1150px;
@@ -27,19 +208,20 @@ body{
   width:230px;
   flex-shrink:0;
   position:sticky;
-  top:0;
-  height:100vh;
+  top:72px;
+  height:calc(100vh - 72px);
   overflow-y:auto;
   padding:35px 0;
 }
 
 .sidebar h2{
-  font-size:13px;
+  font-size:12px;
   text-transform:uppercase;
   letter-spacing:1.5px;
   color:#c2568a;
   margin-bottom:14px;
   font-family:Arial, sans-serif;
+  font-weight:bold;
 }
 
 .sidebar nav a{
@@ -50,11 +232,13 @@ body{
   font-size:14px;
   border-radius:5px;
   font-family:Arial, sans-serif;
+  border-left:2px solid transparent;
 }
 
 .sidebar nav a:hover{
   background:#fbd7e6;
   color:#c2568a;
+  border-left-color:#c2568a;
 }
 
 main{
@@ -94,13 +278,14 @@ h1{
 }
 
 h2{
-  font-size:23px;
+  font-size:24px;
   color:#a8436f;
-  margin-top:48px;
+  margin-top:52px;
   margin-bottom:15px;
-  padding-top:22px;
+  padding-top:24px;
   border-top:1px dashed #f0c4d8;
   font-weight:normal;
+  font-family:Georgia, serif;
 }
 
 h2:first-of-type{
@@ -136,6 +321,8 @@ strong{
   font-weight:bold;
 }
 
+/* ---------- Table of contents ---------- */
+
 .toc{
   background:#fff;
   border:1px solid #f5d3e2;
@@ -148,7 +335,7 @@ strong{
 .toc h3{
   margin-top:0;
   color:#c2568a;
-  font-size:14px;
+  font-size:13px;
   text-transform:uppercase;
   letter-spacing:1px;
 }
@@ -172,6 +359,8 @@ strong{
 .toc a:hover{
   color:#c2568a;
 }
+
+/* ---------- Tables ---------- */
 
 table{
   width:100%;
@@ -208,6 +397,8 @@ td:first-child{
   width:35%;
   font-family:Arial, sans-serif;
 }
+
+/* ---------- Step cards ---------- */
 
 .step{
   background:#fff;
@@ -254,7 +445,7 @@ td:first-child{
   border-top:1px dashed #f0c4d8;
 }
 
-/* Two-date entry mock */
+/* ---------- Two-date entry mock ---------- */
 
 .date-entry{
   display:flex;
@@ -316,7 +507,7 @@ td:first-child{
   color:#c2568a;
 }
 
-/* Calendar mock */
+/* ---------- Calendar mock ---------- */
 
 .calendar{
   font-family:Arial, sans-serif;
@@ -420,7 +611,7 @@ td:first-child{
 .legend i.fertile{background:#fbd7e6;}
 .legend i.safe{background:#e8f4ec;}
 
-/* Support card */
+/* ---------- Support card ---------- */
 
 .support-card{
   background:#fff;
@@ -457,9 +648,11 @@ td:first-child{
   font-family:Arial, sans-serif;
 }
 
+/* ---------- Footer ---------- */
+
 .footer{
   text-align:center;
-  padding:35px 20px 20px;
+  padding:45px 20px 30px;
   color:#b39aa5;
   font-size:13px;
   border-top:1px dashed #f0c4d8;
@@ -472,7 +665,13 @@ td:first-child{
   text-decoration:none;
 }
 
+/* ---------- Mobile ---------- */
+
 @media(max-width:860px){
+  .topbar nav{display:none}
+  .hero{padding:45px 20px 55px}
+  .hero h1{font-size:30px}
+  .hero p{font-size:15px}
   .wrapper{
     flex-direction:column;
     gap:0;
@@ -483,6 +682,7 @@ td:first-child{
     height:auto;
     padding:20px 0;
     border-bottom:1px solid #f5d3e2;
+    top:auto;
   }
   .sidebar nav{
     display:flex;
@@ -493,6 +693,7 @@ td:first-child{
     padding:6px 10px;
     font-size:13px;
     background:#fce4ee;
+    border-left:none;
   }
   main{
     padding:25px 0 60px;
@@ -520,6 +721,36 @@ td:first-child{
 </head>
 <body>
 
+<!-- Top bar -->
+<div class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="#">
+<span class="brand-mark">M</span>
+<span class="brand-name">MamaCycle</span>
+</a>
+<nav>
+<a href="#getting-started">Get Started</a>
+<a href="#tracker">Tracker</a>
+<a href="#calendar-view">Calendar</a>
+<a href="#faq">FAQ</a>
+<a href="#support">Support</a>
+</nav>
+</div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+<div class="hero-inner">
+<span class="hero-tag">Documentation</span>
+<h1>Everything you need to know about <em>your cycle</em>, in one place.</h1>
+<p>MamaCycle turns two simple dates into a full picture of your body's rhythm. This guide walks you through setting up your account, logging your periods, reading your calendar, and understanding what each prediction actually means.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#getting-started">Start Reading</a>
+<a class="btn btn-outline" href="#calendar-view">See the Calendar</a>
+</div>
+</div>
+</section>
+
 <div class="wrapper">
 
 <aside class="sidebar">
@@ -541,10 +772,6 @@ td:first-child{
 </aside>
 
 <main>
-
-<h1>MamaCycle Documentation</h1>
-<p class="subtitle">Welcome to the official MamaCycle documentation. This guide covers everything you need to know about using MamaCycle, from creating your account to understanding your cycle predictions and making the most of your health data.</p>
-<a class="site-link" href="https://www.mamacycle.com">Visit www.mamacycle.com</a>
 
 <div class="toc">
 <h3>Table of Contents</h3>
@@ -870,22 +1097,4 @@ td:first-child{
 <h3>Do I need to log every day?</h3>
 <p>No. The most important log is your period start date. Symptom logging is optional but helps build a fuller picture over time.</p>
 
-<h3>What happens if I forget to log a period?</h3>
-<p>You can add past dates at any time. MamaCycle will update your predictions once the new data is entered.</p>
-
-<h2 id="support">Support</h2>
-<div class="support-card">
-<p><strong>Email:</strong> <a href="mailto:support@mamacycle.com">support@mamacycle.com</a></p>
-<p><strong>Help Center WhatsApp:</strong> <a href="https://wa.me/256746200441">0746200441</a> (also available in Settings, then Help)</p>
-<span class="available">Available 24/7. Anytime, any day.</span>
-</div>
-
-<div class="footer">
-<p>MamaCycle Documentation &middot; <a href="https://www.mamacycle.com">www.mamacycle.com</a></p>
-</div>
-
-</main>
-</div>
-
-</body>
-</html>
+<h3>What happens if I forget to log a period?</h3
