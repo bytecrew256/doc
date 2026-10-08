@@ -234,6 +234,194 @@ td:first-child{
   margin-bottom:0;
 }
 
+/* ---------- Demo blocks ---------- */
+
+.demo-block{
+  background:#fff;
+  border:1px solid #f5d3e2;
+  border-radius:10px;
+  padding:22px;
+  margin:24px 0 30px;
+  box-shadow:0 2px 6px rgba(194,86,138,0.06);
+}
+
+.demo-caption{
+  font-size:13px;
+  color:#8b7580;
+  font-family:Arial, sans-serif;
+  margin-top:14px;
+  padding-top:12px;
+  border-top:1px dashed #f0c4d8;
+}
+
+/* Two-date entry mock */
+
+.date-entry{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  font-family:Arial, sans-serif;
+}
+
+.date-field{
+  flex:1;
+  min-width:200px;
+}
+
+.date-field label{
+  display:block;
+  font-size:12px;
+  color:#8b7580;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  margin-bottom:6px;
+}
+
+.date-field .value{
+  background:#fdeef4;
+  border:1px solid #f0c4d8;
+  border-radius:8px;
+  padding:12px 14px;
+  font-size:15px;
+  color:#a8436f;
+  font-weight:bold;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.date-field .value span.small{
+  font-size:11px;
+  color:#b39aa5;
+  font-weight:normal;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+}
+
+.gap-row{
+  margin-top:18px;
+  background:#fce4ee;
+  border-radius:8px;
+  padding:14px 18px;
+  font-family:Arial, sans-serif;
+  font-size:14px;
+  color:#a8436f;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.gap-row strong{
+  font-size:18px;
+  color:#c2568a;
+}
+
+/* Calendar mock */
+
+.calendar{
+  font-family:Arial, sans-serif;
+  max-width:420px;
+}
+
+.cal-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.cal-head h4{
+  font-size:15px;
+  color:#a8436f;
+  font-weight:bold;
+}
+
+.cal-nav{
+  font-size:13px;
+  color:#b39aa5;
+}
+
+.cal-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:4px;
+}
+
+.cal-grid .dow{
+  text-align:center;
+  font-size:11px;
+  color:#b39aa5;
+  padding:4px 0;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+}
+
+.cal-grid .day{
+  aspect-ratio:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  border-radius:6px;
+  color:#4a3b42;
+  background:#faf7f8;
+}
+
+.cal-grid .day.empty{
+  background:transparent;
+}
+
+.cal-grid .day.period{
+  background:#e05a8e;
+  color:#fff;
+  font-weight:bold;
+}
+
+.cal-grid .day.fertile{
+  background:#fbd7e6;
+  color:#a8436f;
+  font-weight:bold;
+}
+
+.cal-grid .day.safe{
+  background:#e8f4ec;
+  color:#3d7a55;
+}
+
+.cal-grid .day.today{
+  outline:2px solid #a8436f;
+  outline-offset:1px;
+}
+
+.legend{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:16px;
+  font-family:Arial, sans-serif;
+  font-size:12px;
+  color:#6b5560;
+}
+
+.legend span{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.legend i{
+  width:14px;
+  height:14px;
+  border-radius:4px;
+  display:inline-block;
+}
+
+.legend i.period{background:#e05a8e;}
+.legend i.fertile{background:#fbd7e6;}
+.legend i.safe{background:#e8f4ec;}
+
+/* Support card */
+
 .support-card{
   background:#fff;
   border:1px solid #f5d3e2;
@@ -324,6 +512,9 @@ td:first-child{
   td:first-child{
     width:auto;
   }
+  .date-entry{
+    flex-direction:column;
+  }
 }
 </style>
 </head>
@@ -337,6 +528,8 @@ td:first-child{
 <a href="#getting-started">Getting Started</a>
 <a href="#core-features">Core Features</a>
 <a href="#tracker">How the Tracker Works</a>
+<a href="#date-entry">Logging Two Dates</a>
+<a href="#calendar-view">Your Marked Calendar</a>
 <a href="#predictions">Understanding Predictions</a>
 <a href="#symptoms">Symptom Logging</a>
 <a href="#library">Health Library</a>
@@ -359,6 +552,8 @@ td:first-child{
 <li><a href="#getting-started">Getting Started</a></li>
 <li><a href="#core-features">Core Features</a></li>
 <li><a href="#tracker">How the Tracker Works</a></li>
+<li><a href="#date-entry">Logging Two Dates</a></li>
+<li><a href="#calendar-view">Your Marked Calendar</a></li>
 <li><a href="#predictions">Understanding Your Predictions</a></li>
 <li><a href="#symptoms">Symptom Logging</a></li>
 <li><a href="#library">Health Library</a></li>
@@ -448,17 +643,131 @@ td:first-child{
 
 <div class="step">
 <h3>Step 4: Your Calendar Does the Rest</h3>
-<p>Everything is laid out on a marked calendar so you can see your cycle at a glance:</p>
-<ul>
-<li>Period days, clearly marked so you're never caught off guard.</li>
-<li>Fertile window, highlighted so you know when your chances of conception are highest.</li>
-<li>Safe days, marked out so you can plan with confidence.</li>
-</ul>
-<p>No spreadsheets. No counting on your fingers. Just open the calendar and see exactly where you are and what's coming next.</p>
+<p>Everything is laid out on a marked calendar so you can see your cycle at a glance.</p>
 </div>
 
 <h3>Why This Approach Works</h3>
 <p>Many cycle apps rely on averages, assuming every user has a 28-day cycle. But real bodies don't work that way. Your cycle might be 26 days, 32 days, or shift slightly month to month. By using your own logged dates, MamaCycle builds predictions around your actual rhythm. That means fewer surprises, more accurate forecasts, and a calendar that genuinely reflects you.</p>
+
+<h2 id="date-entry">Logging Two Dates</h2>
+<p>This is what the input screen looks like when you enter your dates. Two fields, nothing more. Here we've used an example where the last period started on March 3rd and the next one started on March 31st.</p>
+
+<div class="demo-block">
+
+<div class="date-entry">
+
+<div class="date-field">
+<label>Last period started</label>
+<div class="value">
+03 / 03 / 2026
+<span class="small">Mon</span>
+</div>
+</div>
+
+<div class="date-field">
+<label>This period started</label>
+<div class="value">
+31 / 03 / 2026
+<span class="small">Tue</span>
+</div>
+</div>
+
+</div>
+
+<div class="gap-row">
+<span>Gap between the two dates</span>
+<strong>28 days</strong>
+</div>
+
+<p class="demo-caption">Example only. Your own dates will be different, and that is exactly the point. MamaCycle reads your rhythm, not an average.</p>
+
+</div>
+
+<p>Once both dates are in, the app does the rest. It subtracts the earlier date from the later one, and that number becomes your cycle length for this round. Twenty-eight here, but twenty-six or thirty-one for someone else.</p>
+
+<h2 id="calendar-view">Your Marked Calendar</h2>
+<p>Below is a sample month showing how the calendar fills in after you log your dates. Period days are filled in pink. The fertile window is shaded. Safe days are left green. A darker outline marks today.</p>
+
+<div class="demo-block">
+
+<div class="calendar">
+
+<div class="cal-head">
+<h4>March 2026</h4>
+<span class="cal-nav">&lsaquo; &nbsp; &rsaquo;</span>
+</div>
+
+<div class="cal-grid">
+<span class="dow">Mon</span>
+<span class="dow">Tue</span>
+<span class="dow">Wed</span>
+<span class="dow">Thu</span>
+<span class="dow">Fri</span>
+<span class="dow">Sat</span>
+<span class="dow">Sun</span>
+
+<span class="day empty"></span>
+<span class="day empty"></span>
+<span class="day empty"></span>
+<span class="day empty"></span>
+<span class="day empty"></span>
+<span class="day empty"></span>
+<span class="day period">1</span>
+
+<span class="day period">2</span>
+<span class="day period">3</span>
+<span class="day period">4</span>
+<span class="day period">5</span>
+<span class="day safe">6</span>
+<span class="day safe">7</span>
+<span class="day safe">8</span>
+
+<span class="day safe">9</span>
+<span class="day safe">10</span>
+<span class="day fertile">11</span>
+<span class="day fertile">12</span>
+<span class="day fertile">13</span>
+<span class="day fertile">14</span>
+<span class="day fertile">15</span>
+
+<span class="day fertile">16</span>
+<span class="day safe">17</span>
+<span class="day safe">18</span>
+<span class="day safe">19</span>
+<span class="day safe">20</span>
+<span class="day safe">21</span>
+<span class="day safe">22</span>
+
+<span class="day safe">23</span>
+<span class="day safe">24</span>
+<span class="day safe">25</span>
+<span class="day safe">26</span>
+<span class="day safe">27</span>
+<span class="day safe">28</span>
+<span class="day safe">29</span>
+
+<span class="day today">30</span>
+<span class="day period">31</span>
+<span class="day empty"></span>
+<span class="day empty"></span>
+<span class="day empty"></span>
+<span class="day empty"></span>
+<span class="day empty"></span>
+</div>
+
+<div class="legend">
+<span><i class="period"></i> Period days</span>
+<span><i class="fertile"></i> Fertile window</span>
+<span><i class="safe"></i> Safe days</span>
+</div>
+
+</div>
+
+<p class="demo-caption">Sample calendar for illustration. Your own marked days will shift to match your logged dates.</p>
+
+</div>
+
+<p>Each colour means one thing, and you never have to guess. Period days tell you what to expect. The fertile window tells you where your chances of conception are highest. Safe days sit outside that window. Today is outlined so you always know where you are in the month.</p>
 
 <h2 id="predictions">Understanding Your Predictions</h2>
 <p>Once you've logged at least two cycles, MamaCycle begins generating predictions. Here's what each one means and how to use it.</p>
